@@ -54,7 +54,6 @@ filterEventsByCriteria(true, filterByAgeRestriction) (Д.П.1 -> 6.)
 filterEventsByCriteria('sadsa', filterByName) (Д.П.1 -> 6.)
 filterEventsByCriteria('House disco club', filterByName) (Д.П.1 -> 6.)
 
-rateEvent(1, 9, '987654321')
- - опит да се оцени събитие от клиент, който не е присъствал на него (Д.П.3 -> 3.)
+rateEvent(1, 9, '987654321') - опит да се оцени събитие от клиент, който не е присъствал на него (Д.П.3 -> 3.)
 rateEvent(2, 9, '987654321') - опит да се оцени бъдещо събитие (Д.П.3 -> 3.)
 rateEvent(1, 9, '93092136697') - успешна оценка на събитие (Д.П.3 -> 3.)
