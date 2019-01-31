@@ -183,7 +183,7 @@ var showListOfEvents = function(type){
 
 var checkIfThereIsFilledId = function(action, eventId){
 	if(!eventId){
-		window.alert("Please, fill in the id of the event you would like to " + action + "!");
+		alert("Please, fill in the id of the event you would like to " + action + "!");
 		return false;
 	}else{
 		return true;
@@ -193,7 +193,7 @@ var checkIfThereIsFilledId = function(action, eventId){
 var checkIfThereIsSuchId = function(eventId){
 	eventToBeProcessed = eventsCollection[eventId-1];
 	if(!eventToBeProcessed){
-		window.alert("There is no event with this id.");
+		alert("There is no event with this id.");
 		return false;
 	}else{
 		return true;
@@ -223,12 +223,12 @@ var deleteEvent = function(eventId){
 			currEvent.id = currEvent.id - 1;
 		}
 	}
-	window.alert("Event '" + eventToRemove.eventName + "' with id " + eventToRemove.id + " was successfully deleted!");	
+	alert("Event '" + eventToRemove.eventName + "' with id " + eventToRemove.id + " was successfully deleted!");	
 }
 
 var checkIfThereIsEventName = function(eventName){
 	if(!eventName){
-		window.alert("Please, fill in event name!");
+		alert("Please, fill in event name!");
 		return false;
 	}else{
 		return true;
@@ -257,7 +257,7 @@ var checkIfAgeRestrictionOk = function(ageRestriction){
 
 var addEvent  = function(eventName, year, month, day, hours, minutes, price, limitedAccessFlag){
 	if(!checkIfNewIsAllowed()){
-		window.alert("Sorry, the system is closed for adding new events!");
+		alert("Sorry, the system is closed for adding new events!");
 		return;
 	}
 
@@ -280,7 +280,7 @@ var addEvent  = function(eventName, year, month, day, hours, minutes, price, lim
 	}
 	
 	eventsCollection.push(newEvent);
-	window.alert("Event " + eventName + " was successfully added!");
+	alert("Event " + eventName + " was successfully added!");
 }
 
 
@@ -336,7 +336,7 @@ var checkIfGuestIsVip = function(egn){
 
 var checkIfEventIsAppropriate = function(limitedAccessFlag, age){
 	if(limitedAccessFlag && age < 18){
-		window.alert("This guest is too young for the event!");
+		alert("This guest is too young for the event!");
 		return false;
 	}else{
 		return true;
@@ -349,7 +349,7 @@ var addGuestToEvent = function(eventId, egn, firstName, lastName, age, gender, w
 	var currEvent = eventsCollection[eventId-1];
 
 	if(!checkIfNewIsAllowed()){
-		window.alert("Sorry, the system is closed for adding new guests!");
+		alert("Sorry, the system is closed for adding new guests!");
 		return;
 	}
 
@@ -418,7 +418,7 @@ var addGuestToEvent = function(eventId, egn, firstName, lastName, age, gender, w
 
 	if(!isGuestRegistered){
 		if(!firstName || !lastName || !age || !gender || !egn){
-			window.alert("This guest is not registered in the system. Please, fill in all all the information required so that they can be succesfully registered in the system and for " + currEvent.eventName + "!");
+			alert("This guest is not registered in the system. Please, fill in all all the information required so that they can be succesfully registered in the system and for " + currEvent.eventName + "!");
 			return;
 		}
 
@@ -444,7 +444,7 @@ var addGuestToEvent = function(eventId, egn, firstName, lastName, age, gender, w
 	}
 
 		currEvent.guestList.push(newGuestToEvent);
-		window.alert(newGuestToEvent.firstName + ' ' + newGuestToEvent.lastName + " has been succesfully added as a guest to " + currEvent.eventName);
+		alert(newGuestToEvent.firstName + ' ' + newGuestToEvent.lastName + " has been succesfully added as a guest to " + currEvent.eventName);
 }
 
 
@@ -522,12 +522,12 @@ var removeGuestByEgn = function(eventId, egn){
 			var guest = currEvent.guestList[i];
 			if(guest.egn == egn){
 				currEvent.guestList.splice(i, 1);
-				window.alert("Guest with egn " + egn + "has been successfully removed from event with id " + eventId);
+				alert("Guest with egn " + egn + "has been successfully removed from event with id " + eventId);
 				break;
 			}
 		}
 	}else{
-		window.alert("There is no guest with such egn to the chosen event!");
+		alert("There is no guest with such egn to the chosen event!");
 	}
 }
 
